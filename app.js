@@ -13,8 +13,11 @@ const port = process.env.PORT || 8080;
 app.listen(port ,()=>{
     console.log(`server is listening on port : ${port}`);
 })
+
+const baseUrl = process.env.FRONTENDURL || 'http://localhost:4200';
+
 app.use(cors({
-    origin: '*',
+    origin: baseUrl,
     credentials : true,
     
 }));
