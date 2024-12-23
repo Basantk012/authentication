@@ -14,13 +14,13 @@ app.listen(port ,()=>{
     console.log(`server is listening on port : ${port}`);
 })
 app.use(cors({
-    origin: 'http://localhost:4200',
+    origin: '*',
     credentials : true,
     
 }));
 app.use(cookieParser());
 app.use(express.json());
 app.use(routes);
-app.use(express.static('client'));
+// app.use(express.static('client'));
 
 
