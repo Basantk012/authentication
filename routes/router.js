@@ -70,6 +70,8 @@ router.post('/login',async(req,res)=>{
                         //send cookie to user
                     res.cookie("angular",token,{
                         httpOnly : true,
+                        secure: true, // Ensure you are serving over HTTPS
+                        sameSite: 'None',  //when server and client on diffrent site
                         maxAge : 1*1000*60*60*24 //1 day
                         })
                     
